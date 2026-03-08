@@ -1870,3 +1870,253 @@ img { max-width: 100%; display: block; }
     padding: 10px 12px;
   }
 }
+
+/* ===== CARD-STYLE REVIEW PAGE (v2) ===== */
+.v2-hero {
+  padding: 130px 0 50px;
+  background: var(--white);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.v2-hero .container {
+  max-width: 1060px;
+}
+
+.v2-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.v2-hero .subtitle {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 740px;
+}
+
+.v2-body {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* -- Review card v2 -- */
+.rv2-card {
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 36px;
+  background: var(--white);
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.rv2-card:hover {
+  box-shadow: 0 8px 36px rgba(0,0,0,0.08);
+}
+
+/* Rank badge */
+.rv2-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #166534;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+/* Inner layout */
+.rv2-inner {
+  display: grid;
+  grid-template-columns: 260px 1fr 240px;
+  min-height: 380px;
+}
+
+/* Left — image */
+.rv2-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px 24px;
+  background: #fafbfc;
+  border-right: 1px solid #f1f5f9;
+}
+
+.rv2-image img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+/* Center — features */
+.rv2-features {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rv2-features h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.rv2-checklist {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.rv2-checklist li {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 6px;
+  padding-left: 26px;
+  position: relative;
+  color: var(--text);
+}
+
+.rv2-checklist li::before {
+  content: '✅';
+  position: absolute;
+  left: 0;
+  font-size: 0.82rem;
+}
+
+.rv2-checklist li.con::before {
+  content: '❌';
+}
+
+.rv2-checklist li .label {
+  font-weight: 700;
+}
+
+/* Right — score sidebar */
+.rv2-sidebar {
+  border-left: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  text-align: center;
+  gap: 6px;
+}
+
+.rv2-sidebar .sidebar-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rv2-sidebar .big-score {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.rv2-sidebar .score-word {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #d97706;
+}
+
+.rv2-sidebar .sidebar-stars {
+  color: #f59e0b;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.rv2-sidebar .sidebar-ratings {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.rv2-visit-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 24px;
+  background: #f59e0b;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.rv2-visit-btn:hover {
+  background: #d97706;
+  transform: translateY(-1px);
+}
+
+.rv2-sale-badge {
+  margin-top: 10px;
+  background: #dc2626;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.rv2-sale-badge .sale-pct {
+  color: #fde047;
+  font-weight: 800;
+  display: block;
+  font-size: 0.85rem;
+}
+
+/* Responsive v2 */
+@media (max-width: 968px) {
+  .rv2-inner {
+    grid-template-columns: 200px 1fr 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .v2-hero h1 {
+    font-size: 2rem;
+  }
+
+  .rv2-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .rv2-image {
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 48px 24px 24px;
+  }
+
+  .rv2-features {
+    padding: 24px;
+  }
+
+  .rv2-sidebar {
+    border-left: none;
+    border-top: 1px solid #f1f5f9;
+    padding: 24px;
+  }
+}
