@@ -97,6 +97,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ===== GTM AFFILIATE CLICK TRACKING =====
+window.dataLayer = window.dataLayer || [];
+
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[href]');
+  if (!link) return;
+
+  const href = link.getAttribute('href');
+  if (!href) return;
+
+  // Check if it's an external URL
+  try {
+    const url = new URL(href, window.location.origin);
+    if (url.hostname !== window.location.hostname) {
+      window.dataLayer.push({
+        event: 'affiliate_click',
+        click_url: href,
+        click_text: link.textContent.trim(),
+        click_location: link.closest('[id]')?.id || document.title
+      });
+    }
+  } catch (err) {
+    // Not a valid URL, skip
+  }
+});
+
 // ===== SCROLL REVEAL ANIMATION =====
 const revealElements = document.querySelectorAll('.service-card, .dentist-card, .testimonial-card, .blog-card, .contact-item');
 
